@@ -1,0 +1,21 @@
+:root {
+  /*colors*/
+  --primaryColor: #6366f1;
+  --primaryHover: #4f46e5;
+  --colorText: #e2e8f0;
+  --colorMuted: #94a3b8;
+  --colorHighlight: #818cf8;
+  --colorBackground: #0f172a;
+  --colorCard: #1e293b;
+  --colorBorder: #334155;
+  /*typography*/
+  --fontFamily: "Inter", sans-serif;
+}
+
+h1 {
+  font-family: var(--fontFamily);
+  font-size: clamp(2rem, 1.3vw + 1.6rem, 3rem);
+  line-height: clamp(40px, 1.25vw + 35px, 56px);
+  width: 700;
+  letter-spacing: -0.02em;
+}/*# sourceMappingURL=style.css.map */
