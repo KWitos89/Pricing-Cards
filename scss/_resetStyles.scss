@@ -1,0 +1,70 @@
+@layer reset {
+  /* 1. Nowoczesny Box Sizing i usunięcie marginesów */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* 2. Inteligentne podstawy dla dokumentu */
+  html {
+    -webkit-text-size-adjust: none; /* Lepsze zachowanie na mobile */
+    block-size: 100%;
+    interpolate-size: allow-keywords; /* Pozwala animować wysokość do "auto"! */
+  }
+
+  a,
+  li {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance; /* Zapobiega pojedynczym słowom w nowej linii */
+  }
+
+  p,
+  li {
+    text-wrap: pretty; /* Unika "sierot" na końcach akapitów */
+    max-inline-size: 75ch; /* Optymalna czytelność (opcjonalnie) */
+  }
+
+  /* 4. Reset dla formularzy (koniec z JS dla wysokości!) */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    field-sizing: content; /* Samorosnące textarea bez JavaScriptu! */
+  }
+
+  /* 5. Zdjęcia i media */
+  img,
+  picture,
+  svg,
+  video {
+    max-inline-size: 100%;
+    display: block;
+    height: auto;
+  }
+
+  /* 6. Dostępność: preferowany zredukowany ruch */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

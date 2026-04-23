@@ -1,3 +1,73 @@
+@charset "UTF-8";
+@layer reset {
+  /* 1. Nowoczesny Box Sizing i usunięcie marginesów */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  /* 2. Inteligentne podstawy dla dokumentu */
+  html {
+    -webkit-text-size-adjust: none; /* Lepsze zachowanie na mobile */
+    block-size: 100%;
+    interpolate-size: allow-keywords; /* Pozwala animować wysokość do "auto"! */
+  }
+  a,
+  li {
+    list-style: none;
+    text-decoration: none;
+    color: inherit;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance; /* Zapobiega pojedynczym słowom w nowej linii */
+  }
+  p,
+  li {
+    text-wrap: pretty; /* Unika "sierot" na końcach akapitów */
+    max-inline-size: 75ch; /* Optymalna czytelność (opcjonalnie) */
+  }
+  /* 4. Reset dla formularzy (koniec z JS dla wysokości!) */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+    field-sizing: content; /* Samorosnące textarea bez JavaScriptu! */
+  }
+  /* 5. Zdjęcia i media */
+  img,
+  picture,
+  svg,
+  video {
+    max-inline-size: 100%;
+    display: block;
+    height: auto;
+  }
+  /* 6. Dostępność: preferowany zredukowany ruch */
+  @media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+body {
+  background-color: var(--colorBackground);
+  color: var(--colorText);
+}
+
 :root {
   /*colors*/
   --primaryColor: #6366f1;
@@ -18,4 +88,69 @@ h1 {
   line-height: clamp(40px, 1.25vw + 35px, 56px);
   width: 700;
   letter-spacing: -0.02em;
+}
+
+.header {
+  max-height: 3.75rem;
+  padding-top: 0.5rem;
+}
+.header .header__wrapper {
+  width: clamp(100% - 48px, 85%, 1200px);
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header .header__logo {
+  font-size: 28px;
+}
+.header .header__menu .menu__mobile {
+  display: none;
+}
+.header .header__menu .menu__hamburger .btn__burger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+}
+.header .header__menu .menu__hamburger .btn__burger:hover {
+  cursor: pointer;
+}
+.header .header__menu .menu__hamburger .btn__burger span {
+  position: relative;
+  display: block;
+  width: 60%;
+  background-color: var(--colorMuted);
+  height: 5px;
+  border-radius: 5px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header .header__menu .menu__hamburger .btn__burger span:hover {
+  background-color: var(--colorText);
+}
+.header .header__menu .menu__hamburger .btn__burger span:hover::after, .header .header__menu .menu__hamburger .btn__burger span:hover::before {
+  background-color: var(--colorText);
+}
+.header .header__menu .menu__hamburger .btn__burger span::after, .header .header__menu .menu__hamburger .btn__burger span::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 3px;
+  border-radius: 3px;
+  background-color: var(--colorMuted);
+  left: 50%;
+  transform: translate(-50%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header .header__menu .menu__hamburger .btn__burger span::after {
+  top: 8px;
+}
+.header .header__menu .menu__hamburger .btn__burger span::before {
+  bottom: 8px;
+}
+
+button {
+  background: none;
+  border: none;
 }/*# sourceMappingURL=style.css.map */
