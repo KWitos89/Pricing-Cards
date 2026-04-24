@@ -16,7 +16,33 @@
 
   .header__menu {
     .menu__mobile {
-      display: none;
+      position: absolute;
+      border: 0.5px solid var(--colorBorder);
+      border-radius: 6px;
+      width: calc(100% - 48px);
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      li {
+        padding: 10px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover {
+          background-color: var(--colorCard);
+          border-radius: 6px;
+          padding: 10px;
+          color: var(--colorHighlight);
+          cursor: pointer;
+        }
+      }
+      .menu__links {
+        padding-inline: 10px;
+        padding-block: 15px;
+        gap: 15px;
+        display: flex;
+        flex-direction: column;
+        font-size: 22px;
+      }
     }
     .menu__hamburger {
       .btn__burger {
