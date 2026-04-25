@@ -1,0 +1,106 @@
+.pricing {
+  margin-top: 32px;
+  padding-top: 24px;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  row-gap: 24px;
+  max-width: 1200px;
+  margin-inline: auto;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  &__cards {
+    border-radius: 12px;
+    border: 1px solid var(--colorBorder);
+    height: 350px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba (0, 0, 0, 0.25);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    row-gap: 24px;
+
+    &:hover {
+      box-shadow: 0 20px 40px rgb(0, 0, 0, 0.4);
+      border: 1px solid var(--primaryHover);
+    }
+
+    @media (min-width: 992px) {
+      padding: 32px;
+    }
+
+    .card__title {
+      font-size: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+      font-weight: 600;
+    }
+    .card__price {
+      font-size: clamp(2.25rem, 2.167rem + 0.417vw, 2.5rem);
+      font-weight: 700;
+      color: var(--colorText);
+      letter-spacing: -0.01em;
+
+      span {
+        opacity: 0.5;
+        font-size: clamp(0.75rem, 0.667rem + 0.417vw, 1rem);
+        font-weight: 400;
+        margin-left: 4px;
+      }
+    }
+    .cards__hero {
+      font-size: clamp(1rem, 0.917rem + 0.417vw, 1.25rem);
+      font-weight: 600;
+
+      ul {
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: max-content 1fr;
+        row-gap: 12px;
+        column-gap: 16px;
+
+        li:nth-of-type(1) {
+          grid-row: 1/2;
+          grid-column: 2/3;
+        }
+        li:nth-of-type(2) {
+          grid-row: 2/3;
+          grid-column: 2/3;
+        }
+        li:nth-of-type(3) {
+          grid-row: 3/4;
+          grid-column: 2/3;
+        }
+      }
+    }
+  }
+  .cards__btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      font-size: clamp(1rem, 0.833rem + 0.833vw, 1.5rem);
+      color: var(--colorText);
+      background-color: var(--primaryColor);
+      height: 44px;
+      padding: 0 24px;
+      border-radius: 8px;
+      width: 100%;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+      &:hover {
+        box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+        transform: translateY(-2px);
+        background-color: #4146e5;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .card__pro {
+    box-shadow: 0 20px 40px rgb(0, 0, 0, 0.4);
+    border: 1px solid var(--primaryHover);
+  }
+}

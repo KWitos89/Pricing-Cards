@@ -4,4 +4,11 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
   row-gap: 18px;
+
+  p {
+    font-family: var(--fontFamily);
+    font-weight: 400;
+    font-size: clamp(1.125rem, 1rem + 0.8vw, 1.75rem);
+    opacity: 0.6;
+  }
 }

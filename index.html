@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <header class="header">
 
+    <header class="header">
         <div class="header__wrapper wrapper">
             <div class="header__logo">
                 <a href="#">DevFlow</a>
@@ -32,13 +32,10 @@
                         <li><a class="menu__link" href="#">Login</a></li>
                     </ul>
                 </div>
-
             </div>
         </div>
     </header>
-
     <main>
-
         <div class="wrapper">
             <section class="hero">
                 <h1>Build faster.<br>Launch smarter.</h1>
@@ -46,20 +43,20 @@
             </section>
             <section class="toggle">
                 <div class="toggle__wrapper">
-
                     <input type="radio" name="billing" id="monthly" checked>
                     <label for="monthly">Monthly</label>
-
                     <input type="radio" name="billing" id="yearly">
                     <label for="yearly">Yearly</label>
                     <span class="toggle__bg"></span>
                 </div>
             </section>
-            <section class="pricing" style="display: none;">
+            <section class="pricing">
                 <div class="pricing__cards cards__basic ">
                     <div class="card__title">
                         <h3>Basic</h3>
-                        <p>$9 <span>/month</span></p>
+                    </div>
+                    <div class="card__price">
+                        <p>$9 <span>/ month</span></p>
                     </div>
                     <div class="cards__hero">
                         <ul>
@@ -72,10 +69,12 @@
                         <button>Buy Basic</button>
                     </div>
                 </div>
-                <div class="pricing__cards cards__pro">
+                <div class="pricing__cards card__pro">
                     <div class="card__title">
                         <h3>Pro</h3>
-                        <p>$19 <span>/month</span></p>
+                    </div>
+                    <div class="card__price">
+                        <p>$19 <span>/ month</span></p>
                     </div>
                     <div class="cards__hero">
                         <ul>
@@ -83,15 +82,17 @@
                             <li>Advanced analytics</li>
                             <li>Priority support</li>
                         </ul>
-                        <div class="crads__btn">
-                            <button>Buy Pro</button>
-                        </div>
+                    </div>
+                    <div class="cards__btn">
+                        <button>Buy Pro</button>
                     </div>
                 </div>
                 <div class="pricing__cards cards__team">
                     <div class="card__title">
                         <h3>Team</h3>
-                        <p>$29 <span>/month</span></p>
+                    </div>
+                    <div class="card__price">
+                        <p>$29 <span>/ month</span></p>
                     </div>
                     <div class="cards__hero">
                         <ul>
@@ -99,18 +100,17 @@
                             <li>Team collaboration</li>
                             <li>Dedicated support</li>
                         </ul>
-                        <div class="crads__btn">
-                            <button>Buy Team</button>
-                        </div>
+                    </div>
+                    <div class="cards__btn">
+                        <button>Buy Team</button>
                     </div>
                 </div>
             </section>
         </div>
     </main>
-
     <footer>
-
     </footer>
+
 
     <script src="app.js"></script>
 </body>
