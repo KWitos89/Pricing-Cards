@@ -12,10 +12,11 @@
 <body>
     <header class="header">
 
-        <div class="header__wrapper">
+        <div class="header__wrapper wrapper">
             <div class="header__logo">
                 <a href="#">DevFlow</a>
             </div>
+            <a class="header__login" href="#">Login</a>
             <div class="header__menu">
                 <div class="menu__hamburger">
                     <button class="btn__burger">
@@ -31,75 +32,80 @@
                         <li><a class="menu__link" href="#">Login</a></li>
                     </ul>
                 </div>
+
             </div>
         </div>
     </header>
 
-    <main style="display: none;">
-        <section class="hero">
-            <h1>Bulid faster.<br>Launch smarter.</h1>
-            <p>All-in-one platform to buld, deploy <br>and scale your projects.</p>
-        </section>
-        <section class="toggle">
-            <div class="toggle__wrapper">
-                <input type="radio">
-                <label for="">Monthly</label>
+    <main>
 
-                <input type="radio">
-                <label for="">Yearly</label>
-            </div>
-        </section>
+        <div class="wrapper">
+            <section class="hero">
+                <h1>Bulid faster.<br>Launch smarter.</h1>
+                <p>All-in-one platform to buld, deploy <br>and scale your projects.</p>
+            </section>
+            <section class="toggle">
+                <div class="toggle__wrapper">
 
-        <section class="pricing">
-            <div class="pricing__cards cards__basic ">
-                <div class="card__title">
-                    <h3>Basic</h3>
-                    <p>$9 <span>/month</span></p>
+                    <input type="radio" name="billing" id="monthly" checked>
+                    <label for="monthly">Monthly</label>
+
+                    <input type="radio" name="billing" id="yearly">
+                    <label for="yearly">Yearly</label>
+                    <span class="toggle__bg"></span>
                 </div>
-                <div class="cards__hero">
-                    <ul>
-                        <li>1 project</li>
-                        <li>Basic analytics</li>
-                        <li>Email support</li>
-                    </ul>
-                </div>
-                <div class="crads__btn">
-                    <button>Buy Basic</button>
-                </div>
-            </div>
-            <div class="pricing__cards cards__pro">
-                <div class="card__title">
-                    <h3>Pro</h3>
-                    <p>$19 <span>/month</span></p>
-                </div>
-                <div class="cards__hero">
-                    <ul>
-                        <li>10 project</li>
-                        <li>Advanced analytics</li>
-                        <li>Priority support</li>
-                    </ul>
+            </section>
+            <section class="pricing" style="display: none;">
+                <div class="pricing__cards cards__basic ">
+                    <div class="card__title">
+                        <h3>Basic</h3>
+                        <p>$9 <span>/month</span></p>
+                    </div>
+                    <div class="cards__hero">
+                        <ul>
+                            <li>1 project</li>
+                            <li>Basic analytics</li>
+                            <li>Email support</li>
+                        </ul>
+                    </div>
                     <div class="crads__btn">
-                        <button>Buy Pro</button>
+                        <button>Buy Basic</button>
                     </div>
                 </div>
-            </div>
-            <div class="pricing__cards cards__team">
-                <div class="card__title">
-                    <h3>Team</h3>
-                    <p>$29 <span>/month</span></p>
-                </div>
-                <div class="cards__hero">
-                    <ul>
-                        <li>Ulimited project</li>
-                        <li>Team collaboration</li>
-                        <li>Dedicated support</li>
-                    </ul>
-                    <div class="crads__btn">
-                        <button>Buy Team</button>
+                <div class="pricing__cards cards__pro">
+                    <div class="card__title">
+                        <h3>Pro</h3>
+                        <p>$19 <span>/month</span></p>
+                    </div>
+                    <div class="cards__hero">
+                        <ul>
+                            <li>10 project</li>
+                            <li>Advanced analytics</li>
+                            <li>Priority support</li>
+                        </ul>
+                        <div class="crads__btn">
+                            <button>Buy Pro</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+                <div class="pricing__cards cards__team">
+                    <div class="card__title">
+                        <h3>Team</h3>
+                        <p>$29 <span>/month</span></p>
+                    </div>
+                    <div class="cards__hero">
+                        <ul>
+                            <li>Ulimited project</li>
+                            <li>Team collaboration</li>
+                            <li>Dedicated support</li>
+                        </ul>
+                        <div class="crads__btn">
+                            <button>Buy Team</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>

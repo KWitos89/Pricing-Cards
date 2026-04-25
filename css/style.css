@@ -29,7 +29,6 @@
   p,
   li {
     text-wrap: pretty; /* Unika "sierot" na końcach akapitów */
-    max-inline-size: 75ch; /* Optymalna czytelność (opcjonalnie) */
   }
   /* 4. Reset dla formularzy (koniec z JS dla wysokości!) */
   input,
@@ -68,6 +67,15 @@ body {
   color: var(--colorText);
 }
 
+.wrapper {
+  width: clamp(100% - 64px, 85%, 1200px);
+  margin-inline: auto;
+}
+
+main {
+  margin-top: 64px;
+}
+
 :root {
   /*colors*/
   --primaryColor: #6366f1;
@@ -87,39 +95,82 @@ h1 {
   font-family: var(--fontFamily);
   font-size: clamp(2rem, 1.3vw + 1.6rem, 3rem);
   line-height: clamp(40px, 1.25vw + 35px, 56px);
-  width: 700;
+  font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+p {
+  font-family: var(--fontFamily);
+  font-weight: 400;
+  font-size: clamp(1.125rem, 1rem + 0.8vw, 1.75rem);
+  opacity: 0.6;
 }
 
 .header {
   max-height: 3.75rem;
-  padding-top: 0.5rem;
+  padding-top: 1.5rem;
 }
 .header .header__wrapper {
-  width: clamp(100% - 48px, 85%, 1200px);
+  width: clamp(100% - 64px, 85%, 1200px);
   margin-inline: auto;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+}
+@media screen and (width > 760px) {
+  .header .header__wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr max-content;
+    column-gap: 20px;
+  }
 }
 .header .header__logo {
   font-size: 28px;
 }
+.header .header__login {
+  display: none;
+  font-size: 22px;
+  font-weight: 500;
+}
+@media screen and (width > 760px) {
+  .header .header__login {
+    display: flex;
+    justify-self: end;
+  }
+}
+@media screen and (width > 560px) {
+  .header .header__menu {
+    align-items: center;
+  }
+}
 .header .header__menu .menu__mobile {
   position: absolute;
+  background-color: var(--colorCard);
   border: 0.5px solid var(--colorBorder);
   border-radius: 6px;
   width: calc(100% - 48px);
-  top: 30%;
+  top: 20%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  translate: -1050% -20%;
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 2;
+}
+@media screen and (width > 560px) {
+  .header .header__menu .menu__mobile {
+    max-width: 400px;
+    top: 15%;
+    left: 65%;
+  }
+}
+.header .header__menu .menu__mobile.active {
+  translate: -50% -20%;
 }
 .header .header__menu .menu__mobile li {
   padding: 10px;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header .header__menu .menu__mobile li:hover {
-  background-color: var(--colorCard);
+  background-color: var(--colorBorder);
   border-radius: 6px;
   padding: 10px;
   color: var(--colorHighlight);
@@ -133,12 +184,20 @@ h1 {
   flex-direction: column;
   font-size: 22px;
 }
+.header .header__menu .menu__hamburger {
+  justify-self: end;
+}
+@media (min-width: 992px) {
+  .header .header__menu .menu__hamburger {
+    display: none;
+  }
+}
 .header .header__menu .menu__hamburger .btn__burger {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2rem;
+  height: 2rem;
 }
 .header .header__menu .menu__hamburger .btn__burger:hover {
   cursor: pointer;
@@ -179,4 +238,53 @@ h1 {
 button {
   background: none;
   border: none;
+}
+
+.hero {
+  position: relative;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 18px;
+}
+
+.toggle {
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+.toggle__wrapper {
+  border: 1px solid var(--colorBorder);
+  border-radius: 25px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 280px;
+  height: 52px;
+  position: relative;
+}
+.toggle__wrapper > input {
+  display: none;
+}
+.toggle__wrapper > label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.toggle__bg {
+  background-color: var(--primaryColor);
+  position: absolute;
+  border-radius: 25px;
+  top: 4px;
+  left: 4px;
+  width: calc(50% - 8px);
+  height: calc(100% - 8px);
+  z-index: -1;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+.toggle #yearly:checked ~ .toggle__bg {
+  transform: translateX(calc(100% + 7px));
 }/*# sourceMappingURL=style.css.map */

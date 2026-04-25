@@ -2,3 +2,12 @@ body {
   background-color: var(--colorBackground);
   color: var(--colorText);
 }
+
+.wrapper {
+  width: clamp(calc(100% - 64px), 85%, 1200px);
+  margin-inline: auto;
+}
+
+main {
+  margin-top: 64px;
+}

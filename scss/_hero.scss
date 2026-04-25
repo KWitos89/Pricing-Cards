@@ -1,0 +1,7 @@
+.hero {
+  position: relative;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  row-gap: 18px;
+}
